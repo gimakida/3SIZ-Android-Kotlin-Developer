@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <FrameLayout
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/form"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <View
+                android:layout_marginVertical="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#CCC"/>
+
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/coin" />
+            <TextView
+                android:textAllCaps="true"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_header_title"/>
+
+
+            <EditText
+                android:autofillHints="quantidade"
+                android:inputType="number"
+                android:id="@+id/quaNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Digite a quantidade" />
+
+            <EditText
+                android:autofillHints="precoUnitario"
+                android:inputType="numberDecimal"
+                android:id="@+id/puNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Digite a quantidade" />
+
+            <Button
+                android:id="@+id/btSend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/send_text" />
+            <TextView
+                android:textAllCaps="true"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/total"/>
+        </LinearLayout>
+
+
+
+    </FrameLayout>
+
+</ScrollView>
+
