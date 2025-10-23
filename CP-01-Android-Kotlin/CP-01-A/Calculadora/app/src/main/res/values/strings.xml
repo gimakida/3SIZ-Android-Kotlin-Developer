@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Calculadora</string>
+    <string name ="app_header_title" translatable="false"> Testando a header</string>
+    <string name="total" translatable="false">Total: R$ </string>
+    <string name="label_joker_hint" translatable="false">
+Aqui será exibida a piada
+</string>
+    <string name="name_text" translatable="false">Nome</string>
+    <string name="send_text" translatable="false">Calcular Total</string>
+</resources>
