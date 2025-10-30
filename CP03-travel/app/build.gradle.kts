@@ -5,13 +5,12 @@ plugins {
 }
 
 android {
-    namespace = "br.com.fiap.ludoboardgames"
-    compileSdk = 35
+    namespace = "br.com.rm552673.rm552852"
+    compileSdk = 36
 
     defaultConfig {
-        applicationId = "br.com.fiap.ludoboardgames"
+        applicationId = "br.com.rm552673.rm552852"
         minSdk = 24
-        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
