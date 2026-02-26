@@ -4,9 +4,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import br.com.giovannamakida.navegacaotelasjc.navigation.AppNavGraph
 import br.com.giovannamakida.navegacaotelasjc.ui.screens.NumberAmountScreen
 import br.com.giovannamakida.navegacaotelasjc.ui.screens.ResultScreen
 import br.com.giovannamakida.navegacaotelasjc.ui.theme.NavegacaoTelasJCTheme
@@ -17,6 +19,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             NavegacaoTelasJCTheme {
+
+                AppNavGraph(rememberNavController())
+
                 val navController =
                     rememberNavController()
                 NavHost(
@@ -28,12 +33,13 @@ class MainActivity : ComponentActivity() {
                     }
                     composable(route = "result") {
                         ResultScreen()
-
-
                     }
+
                 }
             }
+    
         }
+
     }
 }
 

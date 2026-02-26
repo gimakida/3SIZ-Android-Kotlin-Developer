@@ -13,41 +13,54 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import br.com.giovannamakida.navegacaotelasjc.ui.theme.NavegacaoTelasJCTheme
 
 @Composable
-fun ResultScreen(modifier: Modifier = Modifier) {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(24.dp),
-        horizontalAlignment =
-            Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-        Text(
-            text = "NÚMEROS SORTEADOS",
-            style =
-                MaterialTheme.typography.headlineMedium
-        )
-        Spacer(modifier = Modifier.height(24.dp))
-
-        LazyVerticalGrid(
-            columns = GridCells.Fixed(3),
-            horizontalArrangement = Arrangement.spacedBy(12.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp)
+fun ResultScreen (amount: Int) {
+    val numbers = remember {
+        (1..60).shuffled().take(amount).sorted()
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(24.dp),
+            horizontalAlignment =
+                Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
         ) {
-            items(6){ number ->
-              Box(
-                  modifier= Modifier.wrapContentSize(),
-                  contentAlignment = Alignment.Center
-              ){
-                  Text( number.toString())
-              }
+            Text(
+                text = "NÚMEROS SORTEADOS",
+                style =
+                    MaterialTheme.typography.headlineMedium
+            )
+            Spacer(modifier = Modifier.height(24.dp))
+
+            LazyVerticalGrid(
+                columns = GridCells.Fixed(3),
+                horizontalArrangement = Arrangement.spacedBy(12.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                items(6) { number ->
+                    Box(
+                        modifier = Modifier.wrapContentSize(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(number.toString())
+                    }
+                }
             }
         }
+    }
+}
+@Preview(showBackground = true)
+@Composable
+private fun ResultScreenPreview() {
+    NavegacaoTelasJCTheme {
+        ResultScreen(6)
     }
 }
 
